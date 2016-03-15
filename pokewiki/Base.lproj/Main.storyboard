@@ -46,20 +46,21 @@
                                 <rect key="frame" x="20" y="222" width="90" height="30"/>
                                 <state key="normal" title="Generation V"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIU-a5-beJ">
+                                <rect key="frame" x="20" y="260" width="94" height="30"/>
+                                <state key="normal" title="Generation VI"/>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1hw-ES-KyD" userLabel="PokéDexTable">
                                 <rect key="frame" x="119" y="70" width="461" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="EJC-kW-LDc" customClass="PokemonDexTableViewCell" customModule="pokewiki" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="protoCell" rowHeight="90" id="EJC-kW-LDc" customClass="PokemonDexTableViewCell" customModule="pokewiki" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="461" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EJC-kW-LDc" id="7vO-Zi-6F2">
-                                            <rect key="frame" x="0.0" y="0.0" width="461" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-Ww-xmW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="{name_zh}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aH-82-Avi">
                                                     <rect key="frame" x="98" y="8" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -78,15 +79,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-Re-BGh">
+                                                    <rect key="frame" x="187" y="0.0" width="2" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-Ww-xmW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CellVertical" destination="Zba-Re-BGh" id="fsT-qn-7FX"/>
+                                            <outlet property="DexImage" destination="l2c-Ww-xmW" id="8GS-Vl-82o"/>
+                                            <outlet property="DexNameEN" destination="5zI-9T-9i9" id="jOX-YF-DLG"/>
+                                            <outlet property="DexNameJP" destination="tBE-3J-5Ze" id="cYG-cH-bJt"/>
+                                            <outlet property="DexNameZH" destination="6aH-82-Avi" id="4Yo-ng-lTl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIU-a5-beJ">
-                                <rect key="frame" x="20" y="260" width="94" height="30"/>
-                                <state key="normal" title="Generation VI"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

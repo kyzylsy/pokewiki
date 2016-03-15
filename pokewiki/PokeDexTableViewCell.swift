@@ -10,9 +10,16 @@ import UIKit
 
 class PokemonDexTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var CellVertical: UIView!
+    @IBOutlet weak var DexNameZH: UILabel!
+    @IBOutlet weak var DexNameEN: UILabel!
+    @IBOutlet weak var DexNameJP: UILabel!
+    @IBOutlet weak var DexImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        CellVertical.layer.borderWidth = 1
+        CellVertical.layer.borderColor = UIColor.blueColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
