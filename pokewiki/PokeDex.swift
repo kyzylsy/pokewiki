@@ -11,12 +11,17 @@ import UIKit
 
 class PokeDex {
     
+    var gen : Int8
+    var index : Int32
     var nameZH : String
     var nameEN : String
     var nameJP : String
     var image : String
+    var type : [String]?
     
-    init(zh: String, en : String, jp : String, image : String) {
+    init(gen : Int8, index : Int32, zh : String, en : String, jp : String, image : String) {
+        self.gen = gen
+        self.index = index
         self.nameZH = zh
         self.nameEN = en
         self.nameJP = jp
