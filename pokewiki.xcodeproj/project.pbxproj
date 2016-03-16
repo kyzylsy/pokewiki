@@ -12,9 +12,10 @@
 		1D8FCEFA1C97C0A9002589C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FCEF81C97C0A9002589C3 /* Main.storyboard */; };
 		1D8FCEFC1C97C0A9002589C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FCEFB1C97C0A9002589C3 /* Assets.xcassets */; };
 		1D8FCEFF1C97C0A9002589C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FCEFD1C97C0A9002589C3 /* LaunchScreen.storyboard */; };
-		1D8FCF091C97D3FB002589C3 /* PokeDexOneTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FCF081C97D3FB002589C3 /* PokeDexOneTypeTableViewCell.swift */; };
 		1D8FCF0D1C97F672002589C3 /* PokeDex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FCF0C1C97F672002589C3 /* PokeDex.swift */; };
-		1DFDDE8F1C9907FD00DA9A6E /* PokeDexTwoTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFDDE8E1C9907FD00DA9A6E /* PokeDexTwoTypeTableViewCell.swift */; };
+		1D960A461C99307B005B81FC /* PokeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D960A451C99307B005B81FC /* PokeType.swift */; };
+		1D960A4E1C99534E005B81FC /* OneTypeDexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D960A4D1C99534E005B81FC /* OneTypeDexTableViewCell.swift */; };
+		1D960A501C99536E005B81FC /* TwoTypeDexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D960A4F1C99536E005B81FC /* TwoTypeDexTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +26,10 @@
 		1D8FCEFB1C97C0A9002589C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D8FCEFE1C97C0A9002589C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D8FCF001C97C0A9002589C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D8FCF081C97D3FB002589C3 /* PokeDexOneTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDexOneTypeTableViewCell.swift; sourceTree = "<group>"; };
 		1D8FCF0C1C97F672002589C3 /* PokeDex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDex.swift; sourceTree = "<group>"; };
-		1DFDDE8E1C9907FD00DA9A6E /* PokeDexTwoTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDexTwoTypeTableViewCell.swift; sourceTree = "<group>"; };
+		1D960A451C99307B005B81FC /* PokeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeType.swift; sourceTree = "<group>"; };
+		1D960A4D1C99534E005B81FC /* OneTypeDexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTypeDexTableViewCell.swift; sourceTree = "<group>"; };
+		1D960A4F1C99536E005B81FC /* TwoTypeDexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTypeDexTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,10 @@
 				1D8FCEFB1C97C0A9002589C3 /* Assets.xcassets */,
 				1D8FCEFD1C97C0A9002589C3 /* LaunchScreen.storyboard */,
 				1D8FCF001C97C0A9002589C3 /* Info.plist */,
-				1D8FCF081C97D3FB002589C3 /* PokeDexOneTypeTableViewCell.swift */,
-				1DFDDE8E1C9907FD00DA9A6E /* PokeDexTwoTypeTableViewCell.swift */,
 				1D8FCF0C1C97F672002589C3 /* PokeDex.swift */,
+				1D960A451C99307B005B81FC /* PokeType.swift */,
+				1D960A4D1C99534E005B81FC /* OneTypeDexTableViewCell.swift */,
+				1D960A4F1C99536E005B81FC /* TwoTypeDexTableViewCell.swift */,
 			);
 			path = pokewiki;
 			sourceTree = "<group>";
@@ -145,11 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D960A4E1C99534E005B81FC /* OneTypeDexTableViewCell.swift in Sources */,
 				1D8FCEF71C97C0A9002589C3 /* ViewController.swift in Sources */,
+				1D960A501C99536E005B81FC /* TwoTypeDexTableViewCell.swift in Sources */,
 				1D8FCF0D1C97F672002589C3 /* PokeDex.swift in Sources */,
 				1D8FCEF51C97C0A9002589C3 /* AppDelegate.swift in Sources */,
-				1DFDDE8F1C9907FD00DA9A6E /* PokeDexTwoTypeTableViewCell.swift in Sources */,
-				1D8FCF091C97D3FB002589C3 /* PokeDexOneTypeTableViewCell.swift in Sources */,
+				1D960A461C99307B005B81FC /* PokeType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
