@@ -19,7 +19,7 @@ class PokeDex : Object {
     dynamic var image : String = ""
     dynamic var type : String = ""
     
-    func setter (gen : Int8, index : Int32, zh : String, en : String, jp : String, image : String, type: String) {
+    func setter (gen : Int8, index : Int32, zh : String, en : String, jp : String, image : String, type: String) -> PokeDex{
         self.gen = gen
         self.index = index
         self.nameZH = zh
@@ -27,5 +27,6 @@ class PokeDex : Object {
         self.nameJP = jp
         self.image = image
         self.type = type
+        return self
     }
 }

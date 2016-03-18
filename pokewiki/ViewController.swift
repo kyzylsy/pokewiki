@@ -24,8 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         DexTable.dataSource = self
         
         db.loadPokeType()
-        let data = db.getPokeTypeData()
-        print(data)
+        loadPokeDex()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,13 +37,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return dex[gen - 1]!.count
-        return 1
+        return dex[gen - 1]!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        /*let pokémon = dex[gen - 1]![indexPath.row]
-        if (pokémon.type.count == 1) {
+        let typeData = db.getPokeTypeData()
+        let pokémon = dex[gen - 1]![indexPath.row]
+        var types = pokémon.type.componentsSeparatedByString(",")
+        if (types.count == 1) {
             let cell = tableView.dequeueReusableCellWithIdentifier("oneTypeCell", forIndexPath: indexPath) as! OneTypeDexTableViewCell
             
             cell.index.text = String(format: "#%03d", pokémon.index)
@@ -52,8 +52,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.nameZH.text = pokémon.nameZH
             cell.nameEN.text = pokémon.nameEN
             cell.nameJP.text = pokémon.nameJP
-            cell.typeView.backgroundColor = UIColor(netHex: types[pokémon.type[0]]!.color)
-            cell.type.text = types[pokémon.type[0]]!.zh
+            cell.typeView.backgroundColor = UIColor(netHex: typeData[Int8(pokémon.type)!]!.color)
+            cell.type.text = typeData[Int8(pokémon.type)!]!.zh
+            
             return cell
 
         } else {
@@ -63,13 +64,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.nameZH.text = pokémon.nameZH
             cell.nameEN.text = pokémon.nameEN
             cell.nameJP.text = pokémon.nameJP
-            cell.firstTypeView.backgroundColor = UIColor(netHex: types[pokémon.type[0]]!.color)
-            cell.firstType.text = types[pokémon.type[0]]!.zh
-            cell.secondTypeView.backgroundColor = UIColor(netHex: types[pokémon.type[1]]!.color)
-            cell.secondType.text = types[pokémon.type[1]]!.zh
+            
+            cell.firstTypeView.backgroundColor = UIColor(netHex: typeData[Int8(types[0])!]!.color)
+            cell.firstType.text = typeData[Int8(types[0])!]!.zh
+            cell.secondTypeView.backgroundColor = UIColor(netHex: typeData[Int8(types[1])!]!.color)
+            cell.secondType.text = typeData[Int8(types[1])!]!.zh
             return cell
-        }*/
-        return tableView.dequeueReusableCellWithIdentifier("oneTypeCell", forIndexPath: indexPath) as! OneTypeDexTableViewCell
+        }
     }
 
 
@@ -84,10 +85,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func loadPokeDex() {
-        /*let bulbasaur = PokeDex(gen: 1, index: 001, zh: "妙蛙种子", en: "Bulbasaur", jp: "フシギダネ", image: "Bulbasaur", type:["grass","posion"])
-        let chikorita = PokeDex(gen: 2, index: 152, zh: "菊草叶", en: "Chikorita", jp: "チコリータ", image: "Chikorita", type:["grass"])
+        let bulbasaur = PokeDex().setter(1, index: 001, zh: "妙蛙种子", en: "Bulbasaur", jp: "フシギダネ", image: "Bulbasaur", type:"5,6")
+        let chikorita = PokeDex().setter(2, index: 152, zh: "菊草叶", en: "Chikorita", jp: "チコリータ", image: "Chikorita", type:"5")
         dex[0] = [bulbasaur]
-        dex[1] = [chikorita]*/
+        dex[1] = [chikorita]
     }
 }
 
