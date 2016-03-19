@@ -17,6 +17,7 @@
 		1D960A461C99307B005B81FC /* PokeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D960A451C99307B005B81FC /* PokeType.swift */; };
 		1D960A4E1C99534E005B81FC /* OneTypeDexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D960A4D1C99534E005B81FC /* OneTypeDexTableViewCell.swift */; };
 		1D960A501C99536E005B81FC /* TwoTypeDexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D960A4F1C99536E005B81FC /* TwoTypeDexTableViewCell.swift */; };
+		1DC10B3D1C9D7030009A1876 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC10B3C1C9D7030009A1876 /* IndexViewController.swift */; };
 		CA36101D817848AC390C8C06 /* Pods_pokewiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC1C8FD6ACF639A29D45FA0 /* Pods_pokewiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		1D960A451C99307B005B81FC /* PokeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeType.swift; sourceTree = "<group>"; };
 		1D960A4D1C99534E005B81FC /* OneTypeDexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTypeDexTableViewCell.swift; sourceTree = "<group>"; };
 		1D960A4F1C99536E005B81FC /* TwoTypeDexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTypeDexTableViewCell.swift; sourceTree = "<group>"; };
+		1DC10B3C1C9D7030009A1876 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		FC2E4FDC848F2E37EE0CD3D4 /* Pods-pokewiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokewiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokewiki/Pods-pokewiki.debug.xcconfig"; sourceTree = "<group>"; };
 		FDC1C8FD6ACF639A29D45FA0 /* Pods_pokewiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokewiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				1D960A4D1C99534E005B81FC /* OneTypeDexTableViewCell.swift */,
 				1D960A4F1C99536E005B81FC /* TwoTypeDexTableViewCell.swift */,
 				1D848E9A1C9BCF1300CDEE94 /* DbDelegate.swift */,
+				1DC10B3C1C9D7030009A1876 /* IndexViewController.swift */,
 			);
 			path = pokewiki;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				1D960A4E1C99534E005B81FC /* OneTypeDexTableViewCell.swift in Sources */,
 				1D8FCEF71C97C0A9002589C3 /* ViewController.swift in Sources */,
 				1D960A501C99536E005B81FC /* TwoTypeDexTableViewCell.swift in Sources */,
+				1DC10B3D1C9D7030009A1876 /* IndexViewController.swift in Sources */,
 				1D848E9B1C9BCF1300CDEE94 /* DbDelegate.swift in Sources */,
 				1D8FCF0D1C97F672002589C3 /* PokeDex.swift in Sources */,
 				1D8FCEF51C97C0A9002589C3 /* AppDelegate.swift in Sources */,
