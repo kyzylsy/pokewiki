@@ -85,8 +85,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func loadPokeDex() {
-        let bulbasaur = PokeDex().setter(1, index: 001, zh: "妙蛙种子", en: "Bulbasaur", jp: "フシギダネ", image: "Bulbasaur", type:"5,6")
-        let chikorita = PokeDex().setter(2, index: 152, zh: "菊草叶", en: "Chikorita", jp: "チコリータ", image: "Chikorita", type:"5")
+        let bulbasaur = PokeDex().setter(1, index: 001, zh: "妙蛙种子", en: "Bulbasaur", jp: "フシギダネ", image: "Bulbasaur", type: "5,6")
+        let chikorita = PokeDex().setter(2, index: 152, zh: "菊草叶", en: "Chikorita", jp: "チコリータ", image: "Chikorita", type: "5")
         dex[0] = [bulbasaur]
         dex[1] = [chikorita]
     }

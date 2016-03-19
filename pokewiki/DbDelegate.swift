@@ -12,7 +12,7 @@ import Realm
 
 class DbDelegate {
     
-    let realm = try! Realm(configuration: Realm.Configuration(path: NSBundle.mainBundle().pathForResource("poke", ofType:"realm"), readOnly: false))
+    let realm = try! Realm()
     
     func loadPokeType() {
         try! realm.write {
