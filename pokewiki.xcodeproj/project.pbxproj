@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D848E9B1C9BCF1300CDEE94 /* DbDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D848E9A1C9BCF1300CDEE94 /* DbDelegate.swift */; };
-		1D848E9D1C9C01CF00CDEE94 /* poke.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1D848E9C1C9C01CF00CDEE94 /* poke.realm */; };
 		1D8FCEF51C97C0A9002589C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FCEF41C97C0A9002589C3 /* AppDelegate.swift */; };
 		1D8FCEF71C97C0A9002589C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FCEF61C97C0A9002589C3 /* ViewController.swift */; };
 		1D8FCEFA1C97C0A9002589C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8FCEF81C97C0A9002589C3 /* Main.storyboard */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		148F70C8B64A97ED3128AB09 /* Pods-pokewiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokewiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokewiki/Pods-pokewiki.release.xcconfig"; sourceTree = "<group>"; };
 		1D848E9A1C9BCF1300CDEE94 /* DbDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbDelegate.swift; sourceTree = "<group>"; };
-		1D848E9C1C9C01CF00CDEE94 /* poke.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = poke.realm; sourceTree = "<group>"; };
 		1D8FCEF11C97C0A9002589C3 /* pokewiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokewiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8FCEF41C97C0A9002589C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D8FCEF61C97C0A9002589C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		1D8FCEF31C97C0A9002589C3 /* pokewiki */ = {
 			isa = PBXGroup;
 			children = (
-				1D848E9C1C9C01CF00CDEE94 /* poke.realm */,
 				1D8FCEF41C97C0A9002589C3 /* AppDelegate.swift */,
 				1D8FCEF61C97C0A9002589C3 /* ViewController.swift */,
 				1D8FCEF81C97C0A9002589C3 /* Main.storyboard */,
@@ -168,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8FCEFF1C97C0A9002589C3 /* LaunchScreen.storyboard in Resources */,
-				1D848E9D1C9C01CF00CDEE94 /* poke.realm in Resources */,
 				1D8FCEFC1C97C0A9002589C3 /* Assets.xcassets in Resources */,
 				1D8FCEFA1C97C0A9002589C3 /* Main.storyboard in Resources */,
 			);

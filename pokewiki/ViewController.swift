@@ -12,8 +12,9 @@ import RealmSwift
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let db = DbDelegate()
-    var gen = 1
-    var dex = [Int:[PokeDex]]()
+    var gen : Int8 = 1
+    var dex = [PokeDex]()
+    var typeData : [Int8: PokeType] = [:]
 
     @IBOutlet weak var DexTable: UITableView!
     
@@ -24,7 +25,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         DexTable.dataSource = self
         
         db.loadPokeType()
-        loadPokeDex()
+        db.loadPokeDex()
+        
+        typeData = db.getPokeTypeData()
+        dex = db.getPokeDexByGen(gen)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,12 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dex[gen - 1]!.count
+        return dex.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let typeData = db.getPokeTypeData()
-        let pokémon = dex[gen - 1]![indexPath.row]
+        let pokémon = dex[indexPath.row]
         var types = pokémon.type.componentsSeparatedByString(",")
         if (types.count == 1) {
             let cell = tableView.dequeueReusableCellWithIdentifier("oneTypeCell", forIndexPath: indexPath) as! OneTypeDexTableViewCell
@@ -76,19 +79,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func touchGen1(sender: UIButton) {
         gen = 1
+        dex = db.getPokeDexByGen(gen)
         DexTable.reloadData()
     }
     
     @IBAction func touchGen2(sender: UIButton) {
         gen = 2
+        dex = db.getPokeDexByGen(gen)
         DexTable.reloadData()
-    }
-
-    func loadPokeDex() {
-        let bulbasaur = PokeDex().setter(1, index: 001, zh: "妙蛙种子", en: "Bulbasaur", jp: "フシギダネ", image: "Bulbasaur", type:"5,6")
-        let chikorita = PokeDex().setter(2, index: 152, zh: "菊草叶", en: "Chikorita", jp: "チコリータ", image: "Chikorita", type:"5")
-        dex[0] = [bulbasaur]
-        dex[1] = [chikorita]
     }
 }
 

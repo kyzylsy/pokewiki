@@ -12,7 +12,7 @@ import Realm
 
 class DbDelegate {
     
-    let realm = try! Realm(configuration: Realm.Configuration(path: NSBundle.mainBundle().pathForResource("poke", ofType:"realm"), readOnly: false))
+    let realm = try! Realm()
     
     func loadPokeType() {
         try! realm.write {
@@ -39,11 +39,22 @@ class DbDelegate {
         print(realm.path)
     }
     
+    func loadPokeDex() {
+        try! realm.write{
+            realm.add(PokeDex().setter(1, index: 1, zh: "妙蛙种子", en: "Bulbasaur", jp: "フシギダネ", image: "Bulbasaur", type:"5,6"))
+            realm.add(PokeDex().setter(2, index: 152, zh: "菊草叶", en: "Chikorita", jp: "チコリータ", image: "Chikorita", type:"5"))
+        }
+    }
+    
     func getPokeTypeData() -> [Int8: PokeType] {
         var result = [Int8: PokeType]()
         for type in realm.objects(PokeType) {
             result[type.id] = type
         }
         return result
+    }
+    
+    func getPokeDexByGen(gen : Int8) -> [PokeDex] {
+        return Array(realm.objects(PokeDex).filter("gen == \(gen)").sorted("index"))
     }
 }

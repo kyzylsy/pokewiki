@@ -29,4 +29,12 @@ class PokeDex : Object {
         self.type = type
         return self
     }
+    
+    override static func primaryKey() -> String? {
+        return "index"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["gen"]
+    }
 }

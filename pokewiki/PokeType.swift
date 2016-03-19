@@ -24,4 +24,8 @@ class PokeType : Object {
         self.color = color
         return self
     }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
