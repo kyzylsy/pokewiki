@@ -4,6 +4,7 @@ Realm.framework/
 RealmSwift.framework
 *.lock
 *.log*
+Pods/
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
