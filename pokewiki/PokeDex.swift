@@ -6,20 +6,21 @@
 //  Copyright © 2016年 LSteven. All rights reserved.
 //
 import Foundation
-import RealmSwift
-import Realm
 
-class PokeDex : Object {
+class PokeDex {
     
-    dynamic var gen : Int8 = 0
-    dynamic var index : Int32 = 0
-    dynamic var nameZH : String = ""
-    dynamic var nameEN : String = ""
-    dynamic var nameJP : String = ""
-    dynamic var image : String = ""
-    dynamic var type : String = ""
+    var gen : Int8 = 0
+    var index : Int32 = 0
+    var nameZH : String = ""
+    var nameEN : String = ""
+    var nameJP : String = ""
+    var image : String = ""
+    var type : String = ""
+    var tcgType : Int8 = 0
+    var species : String = ""
+    var ability : [String] = []
     
-    func setter (gen : Int8, index : Int32, zh : String, en : String, jp : String, image : String, type: String) -> PokeDex{
+    func setBasic (gen : Int8, index : Int32, zh : String, en : String, jp : String, image : String, type: String) -> PokeDex{
         self.gen = gen
         self.index = index
         self.nameZH = zh
@@ -28,13 +29,5 @@ class PokeDex : Object {
         self.image = image
         self.type = type
         return self
-    }
-    
-    override static func primaryKey() -> String? {
-        return "index"
-    }
-    
-    override static func indexedProperties() -> [String] {
-        return ["gen"]
     }
 }

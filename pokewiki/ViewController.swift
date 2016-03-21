@@ -11,10 +11,8 @@ import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let db = DbDelegate()
-    var gen : Int8 = 1
-    var dex = [PokeDex]()
-    var typeData : [Int8: PokeType] = [:]
+    let data = DataDelegate()
+    var gen : UInt = 1
 
     @IBOutlet weak var DexTable: UITableView!
     
@@ -24,11 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         DexTable.delegate = self
         DexTable.dataSource = self
         
-        db.loadPokeType()
-        db.loadPokeDex()
-        
-        typeData = db.getPokeTypeData()
-        dex = db.getPokeDexByGen(gen)
+        data.loadPokeType()
+        data.loadPokeDex()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,11 +36,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dex.count
+        return data.getPokeDexByGen(gen).count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let pokémon = dex[indexPath.row]
+        let pokémon = data.getPokeDexByGen(gen)[indexPath.row]
         var types = pokémon.type.componentsSeparatedByString(",")
         if (types.count == 1) {
             let cell = tableView.dequeueReusableCellWithIdentifier("oneTypeCell", forIndexPath: indexPath) as! OneTypeDexTableViewCell
@@ -55,8 +50,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.nameZH.text = pokémon.nameZH
             cell.nameEN.text = pokémon.nameEN
             cell.nameJP.text = pokémon.nameJP
-            cell.typeView.backgroundColor = UIColor(netHex: typeData[Int8(pokémon.type)!]!.color)
-            cell.type.text = typeData[Int8(pokémon.type)!]!.zh
+            cell.typeView.backgroundColor = UIColor(netHex: data.getType()[UInt(pokémon.type)!]!.color)
+            cell.type.text = data.getType()[UInt(pokémon.type)!]!.zh
             
             return cell
 
@@ -68,10 +63,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.nameEN.text = pokémon.nameEN
             cell.nameJP.text = pokémon.nameJP
             
-            cell.firstTypeView.backgroundColor = UIColor(netHex: typeData[Int8(types[0])!]!.color)
-            cell.firstType.text = typeData[Int8(types[0])!]!.zh
-            cell.secondTypeView.backgroundColor = UIColor(netHex: typeData[Int8(types[1])!]!.color)
-            cell.secondType.text = typeData[Int8(types[1])!]!.zh
+            cell.firstTypeView.backgroundColor = UIColor(netHex: data.getType()[UInt(types[0])!]!.color)
+            cell.firstType.text = data.getType()[UInt(types[0])!]!.zh
+            cell.secondTypeView.backgroundColor = UIColor(netHex: data.getType()[UInt(types[1])!]!.color)
+            cell.secondType.text = data.getType()[UInt(types[1])!]!.zh
             return cell
         }
     }
@@ -79,13 +74,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBAction func touchGen1(sender: UIButton) {
         gen = 1
-        dex = db.getPokeDexByGen(gen)
         DexTable.reloadData()
     }
     
     @IBAction func touchGen2(sender: UIButton) {
         gen = 2
-        dex = db.getPokeDexByGen(gen)
         DexTable.reloadData()
     }
 }
