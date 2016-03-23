@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DexListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let data = DataDelegate()
     var gen : UInt = 1

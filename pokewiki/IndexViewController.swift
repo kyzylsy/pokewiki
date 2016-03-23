@@ -35,13 +35,14 @@ class IndexViewController: UIViewController {
         titleView.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
         self.navigationItem.titleView = titleView
         
-        let recognizer = UITapGestureRecognizer(target: self, action: "titleWasTapped")
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(IndexViewController.titleWasTapped))
         titleView.userInteractionEnabled = true
         titleView.addGestureRecognizer(recognizer)
     }
     
     func titleWasTapped() {
-        switch ++counter {
+        counter += 1 //++count will remove at swift3
+        switch counter {
         case 1:
             titleView.text = "宝可梦百科"
         case 2:
