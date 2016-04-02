@@ -15,7 +15,6 @@ class OneTypeDexTableViewCell: UITableViewCell {
     @IBOutlet weak var nameZH: UILabel!
     @IBOutlet weak var nameEN: UILabel!
     @IBOutlet weak var nameJP: UILabel!
-    @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var type: UILabel!
     
     override func awakeFromNib() {

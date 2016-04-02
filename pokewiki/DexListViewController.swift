@@ -14,13 +14,13 @@ class DexListViewController: UIViewController, UITableViewDelegate, UITableViewD
     let data = DataDelegate()
     var gen : UInt = 1
 
-    @IBOutlet weak var DexTable: UITableView!
+    @IBOutlet weak var dexTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DexTable.delegate = self
-        DexTable.dataSource = self
+        dexTable.delegate = self
+        dexTable.dataSource = self
         
         data.loadPokeType()
         data.loadPokeDex()
@@ -50,7 +50,7 @@ class DexListViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.nameZH.text = pokémon.nameZH
             cell.nameEN.text = pokémon.nameEN
             cell.nameJP.text = pokémon.nameJP
-            cell.typeView.backgroundColor = UIColor(netHex: data.getType()[UInt(pokémon.type)!]!.color)
+            cell.type.backgroundColor = UIColor(netHex: data.getType()[UInt(pokémon.type)!]!.color)
             cell.type.text = data.getType()[UInt(pokémon.type)!]!.zh
             
             return cell
@@ -63,23 +63,34 @@ class DexListViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.nameEN.text = pokémon.nameEN
             cell.nameJP.text = pokémon.nameJP
             
-            cell.firstTypeView.backgroundColor = UIColor(netHex: data.getType()[UInt(types[0])!]!.color)
+            cell.firstType.backgroundColor = UIColor(netHex: data.getType()[UInt(types[0])!]!.color)
             cell.firstType.text = data.getType()[UInt(types[0])!]!.zh
-            cell.secondTypeView.backgroundColor = UIColor(netHex: data.getType()[UInt(types[1])!]!.color)
+            cell.secondType.backgroundColor = UIColor(netHex: data.getType()[UInt(types[1])!]!.color)
             cell.secondType.text = data.getType()[UInt(types[1])!]!.zh
             return cell
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        print("show detail")
+        let detailViewController = segue.destinationViewController as! DexDetailViewController
+        if let selectedCell = sender as? UITableViewCell {
+            let indexPath = dexTable.indexPathForCell(selectedCell)!
+            detailViewController.pokeDex = data.getPokeDexByGen(gen)[indexPath.row]
         }
     }
 
 
     @IBAction func touchGen1(sender: UIButton) {
         gen = 1
-        DexTable.reloadData()
+        dexTable.reloadData()
     }
     
     @IBAction func touchGen2(sender: UIButton) {
         gen = 2
-        DexTable.reloadData()
+        dexTable.reloadData()
     }
 }
 

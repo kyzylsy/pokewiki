@@ -15,9 +15,7 @@ class TwoTypeDexTableViewCell: UITableViewCell {
     @IBOutlet weak var nameZH: UILabel!
     @IBOutlet weak var nameEN: UILabel!
     @IBOutlet weak var nameJP: UILabel!
-    @IBOutlet weak var firstTypeView: UIView!
     @IBOutlet weak var firstType: UILabel!
-    @IBOutlet weak var secondTypeView: UIView!
     @IBOutlet weak var secondType: UILabel!
     
     override func awakeFromNib() {
